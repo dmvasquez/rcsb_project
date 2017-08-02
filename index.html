@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="" ng-app="app">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>UI Search</title>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+		<!-- Main CSS -->
+		<link rel="stylesheet" href="CSS/main.css">
+		<!-- Toastr -->
+		<link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css"/>
+	</head>
+    <body>
+        <!-- Navbar -->
+        <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#325880">
+            <div class="container-fluid">
+                <a class="navbar-brand" style="color: #fff">RCSB PDB</a>
+                <ul class="nav navbar-nav">
+                    <li class="">
+                        <a ui-sref="listview" style="color: #fff">Option 1</a>
+                    </li>
+                    <li>
+                        <a ui-sref="searchview" style="color: #fff">Option 2</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="" style="float: left; margin-bottom: 120px; margin-right: 40px; background-color:#325880">
+            <div></div>
+        </div>
+        <pre><code id="daCode" style="color: black;"> HELLO </code></pre>
+
+
+
+
+
+
+
+
+        <!-- Angular.js -->
+	    <script src="bower_components/angular/angular.js"></script>
+		<!-- jQuery -->
+		<script src="bower_components/jquery/dist/jquery.js"></script>
+		<!-- Bootstrap JavaScript -->
+		<script src= "bower_components/bootstrap/dist/js/bootstrap.js"></script>
+		<!--Toastr-->
+	    <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+ 		<!--Angular-UI-Router-->
+ 		<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+ 		<!--JavaScript Files-->
+        <script></script>
+        <script></script>
+        <script></script>
+        <script>
+        var original = "";
+        //Obtain s1 JSON
+        $.getJSON("HIV_LeftSideRefinements.json", function(leftSideRef) {
+            original = JSON.stringify(leftSideRef, null, 4);
+            console.log(original);
+            document.getElementById("daCode").innerHTML = original;
+        })
+        </script>
+
+    </body>
+</html>
+
