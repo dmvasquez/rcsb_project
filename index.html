@@ -9,11 +9,12 @@
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
 		<!-- Main CSS -->
-		<link rel="stylesheet" href="CSS/main.css">
+		<link rel="stylesheet" href="css/main.css">
 		<!-- Toastr -->
-		<link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css"/>
+		<link rel="stylesheet" href="bower_components/toastr/toastr.css"/>
 	</head>
-    <body ng-controller="">
+    <body ng-controller="SearchController as search">
+        
         <!-- Navbar -->
         <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#325880">
             <div class="container-fluid">
@@ -28,16 +29,14 @@
                 </ul>
             </div>
         </div>
-        <div class="" style="float: left; margin-bottom: 120px; margin-right: 40px; background-color: aqua">
-            <div></div>
+
+        <!--Side Navigation Results -->
+        <div id="mySidenav" class="sidenav" style="background-color: #C59143;">
+            <a class="drillDown col-lg-12 col-md-12 col-sm-4 col-xs-6" ng-repeat="obj in search.resultSet" style="color: black; cursor: pointer; ">{{obj.id}}</a>
         </div>
-        <pre><code id="daCode" style="color: black;"> HELLO </code></pre>
 
-
-
-
-
-
+        <!--Current JSON Results -->
+        <pre style="margin-left: 250px; margin-top: 4%;"><code id="daCode" style="color: black;"> HELLO </code></pre>
 
 
         <!-- Angular.js -->
@@ -47,22 +46,13 @@
 		<!-- Bootstrap JavaScript -->
 		<script src= "bower_components/bootstrap/dist/js/bootstrap.js"></script>
 		<!--Toastr-->
-	    <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+	    <script src="bower_components/toastr/toastr.js"></script>
  		<!--Angular-UI-Router-->
- 		<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+ 		<!-- <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script> -->
  		<!--JavaScript Files-->
+        <script src="app/app.module.js"></script>
+        <script src="app/search.controller.js"></script>
         <script></script>
-        <script></script>
-        <script></script>
-        <script>
-        var original = "";
-        //Obtain s1 JSON
-        $.getJSON("HIV_LeftSideRefinements.json", function(leftSideRef) {
-            original = JSON.stringify(leftSideRef, null, 4);
-            console.log(original);
-            document.getElementById("daCode").innerHTML = original;
-        })
-        </script>
 
     </body>
 </html>
