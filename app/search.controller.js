@@ -18,7 +18,7 @@
         function activate() {
             $.getJSON("HIV_LeftSideRefinements.json", function(leftSideRef) {
             original = JSON.stringify(leftSideRef, null, 4);
-            document.getElementById("daCode").innerHTML = original;
+            //document.getElementById("daCode").innerHTML = original;
             $timeout(function() {
                 vm.resultSet = $.parseJSON(original);
                 console.log(vm.resultSet);            

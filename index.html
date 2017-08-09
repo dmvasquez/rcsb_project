@@ -15,7 +15,7 @@
 	</head>
     <body ng-controller="SearchController as search">
         
-        <!-- Navbar -->
+        <!-- Navbar: SAME AS WEBSITE -->
         <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#325880">
             <div class="container-fluid">
                 <a class="navbar-brand" style="color: #fff">RCSB PDB</a>
@@ -30,13 +30,39 @@
             </div>
         </div>
 
-        <!--Side Navigation Results -->
-        <div id="mySidenav" class="sidenav" style="background-color: #C59143;">
-            <a class="drillDown col-lg-12 col-md-12 col-sm-4 col-xs-6" ng-repeat="obj in search.resultSet" style="color: black; cursor: pointer; ">{{obj.id}}</a>
+        <!-- Header: SAME AS WEBSITE -->
+        <div style="margin-left: 300px; margin-top: 4%;">
+            <form>
+                <div class="form-group container">
+                    <div class="input-group col-md-8">
+                        <input type="text" name="" placeholder="Search Here" class="form-control">
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary">Go!</button>
+                        </span>
+                    </div>
+                </div>
+            </form>
         </div>
+        
+        <!-- Main Content -->
+            
+            <!--Side Navigation Results (Problem: static list of anchor tags => USE NG-REPEAT) -->
+            <div id="mySidenav" class="sidenav" style="background-color: #C59143;">
+                <a style="color: Blue;" >Refinements:</a>
+                <a class="drillDown col-lg-12 col-md-12 col-sm-4 col-xs-6" ng-repeat="obj in search.resultSet" style="color: black; cursor: pointer; ">{{obj.id}}</a>
+            </div>
+
+            <!-- Search Results -->
+            <div style="margin-left: 300px; margin-top: 4%;">
+
+                <!-- Sub-header with filter options and settings -->
+
+                <!-- Results displayed (Problem: static list => USE NG-REPEAT) -->
+                <div></div>
+            </div>
 
         <!--Current JSON Results -->
-        <pre style="margin-left: 250px; margin-top: 4%;"><code id="daCode" style="color: black;"> HELLO </code></pre>
+        <!--<pre style="margin-left: 300px; margin-top: 4%;"><code id="daCode" style="color: black;"> HELLO </code></pre> -->
 
 
         <!-- Angular.js -->
