@@ -58,7 +58,15 @@
                 <!-- Sub-header with filter options and settings -->
 
                 <!-- Results displayed (Problem: static list => USE NG-REPEAT) -->
-                <div></div>
+                <div class="row">
+                    <div class="col-md-10" style="margin-left: 5%;" ng-repeat="obj in search.firstResults['Result Set']">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">{{ obj['PDB ID'] }}</div>
+                            <div class="panel-body">Body</div>
+                            <div class="panel-footer">Footer</div>
+                        </div>
+                    </div>    
+                </div>
             </div>
 
         <!--Current JSON Results -->
