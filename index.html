@@ -43,12 +43,21 @@
                 </div>
             </form>
         </div>
+        <div class="well" style="margin-left: 300px;"> 
+            <form>
+                <div class="form-group container">
+                    <p>Advanced Search: </p>
+                    <select name="" id=""></select>
+
+                </div>
+            </form>
+        </div>
         
         <!-- Main Content -->
             
             <!--Side Navigation Results (Problem: static list of anchor tags => USE NG-REPEAT) -->
             <div id="mySidenav" class="sidenav" style="background-color: #C59143;">
-                <a style="color: Blue;" >Refinements:</a>
+                <a style="color: #325880;" >Refinements:</a>
                 <a class="drillDown col-lg-12 col-md-12 col-sm-4 col-xs-6" ng-repeat="obj in search.resultSet" style="color: black; cursor: pointer; ">{{obj.id}}</a>
             </div>
 
@@ -61,8 +70,38 @@
                 <div class="row">
                     <div class="col-md-10" style="margin-left: 5%;" ng-repeat="obj in search.firstResults['Result Set']">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">{{ obj['PDB ID'] }}</div>
-                            <div class="panel-body">Body</div>
+                            <div class="panel-heading">
+                                <p class="lead">{{ obj['PDB ID'] }}</p>
+                            </div>
+                            <div class="panel-body">
+                                <div class="col-md-4">
+                                    <img src="https://cdn.rcsb.org/images/rutgers/{{ obj['PDB ID'][1] | lowercase}}{{ obj['PDB ID'][2] | lowercase}}/{{ obj['PDB ID'] | lowercase }}/{{ obj['PDB ID'] | lowercase }}.pdb1-250.jpg" alt="">
+                                </div>
+                                <div class="col-md-8">
+                                    <p>Title: {{ obj.Title }}</p>
+                                    <p>Authors: {{ obj.Authors }}</p>
+                                    <p>{{ obj.Citation }}</p>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p>Released: {{ obj['Released Date'] }} </p>
+                                            <p>Method: {{ obj.Method }} </p>
+                                            <p>Resolution: {{ obj.Resolution }} </p>
+                                            <p>Residue Count: {{ obj['Residue Count'] }} </p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>Macromolecule: {{ obj.Macromolecule }} </p>
+                                            <p>Unique Ligands: {{ obj.Ligands}} </p>
+                                            <p>Search term match score: {{ obj.Score }} </p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <p>Matched fields in {{ obj['PDB ID'] }}.cif:</p>
+                                        <p></p>
+                                        <p></p>
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="panel-footer">Footer</div>
                         </div>
                     </div>    
